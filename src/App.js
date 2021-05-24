@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Character from './components/Character';
+import Pagination from './components/Pagination';
 
 function App() {
 
@@ -44,9 +45,21 @@ const charList = characters.map(char => <Character key={Math.floor(Math.random()
 
   return (
     <div className="App">
-     <div className="char-cards">
+      <Pagination
+        nextPage={nextPageUrl ? nextPage : null}
+        prevPage={prevPageUrl ? prevPage : null}
+        goToPage={goToPage}
+        pages={pages}
+      />
+      <div className="char-cards">
         {charList}
       </div>
+      <Pagination
+        nextPage={nextPageUrl ? nextPage : null}
+        prevPage={prevPageUrl ? prevPage : null}
+        goToPage={goToPage}
+        pages={pages}
+      />
     </div>
   );
 }
