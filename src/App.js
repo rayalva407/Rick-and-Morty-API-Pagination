@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Character from './components/Character';
 
 function App() {
 
@@ -37,9 +38,15 @@ function goToPage(num) {
   setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
 }
 
+if (loading) return "Loading..."
+
+const charList = characters.map(char => <Character key={Math.floor(Math.random() * 10000)} name={char.name} img={char.image} />)
+
   return (
     <div className="App">
-      <h1>Hello World</h1>
+     <div className="char-cards">
+        {charList}
+      </div>
     </div>
   );
 }
