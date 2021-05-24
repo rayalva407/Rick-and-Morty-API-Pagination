@@ -25,6 +25,18 @@ useEffect(() => {
   fetchData();
 },[currentPageUrl])
 
+function nextPage() {
+  setCurrentPageUrl(nextPageUrl)
+}
+
+function prevPage() {
+  setCurrentPageUrl(prevPageUrl)
+}
+
+function goToPage(num) {
+  setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
+}
+
   return (
     <div className="App">
       <h1>Hello World</h1>
