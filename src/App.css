@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+.char-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3%;
+}
+
+.character-card {
+  padding: 3em;
+  margin: 6em;
+  background-color: rgba(7, 7, 20, 0.514);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

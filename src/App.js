@@ -7,7 +7,7 @@ function App() {
 
 const [loading, setLoading] = useState(true)
 const [characters, setCharacters] = useState([])
-const [currentPageUrl, setCurrentPageUrl] = useState("https://rickandmortyapi.com/api/character?page=1")
+const [currentPageUrl, setCurrentPageUrl] = useState("https://rickandmortyapi.com/api/character")
 const [nextPageUrl, setNextPageUrl] = useState()
 const [prevPageUrl, setPrevPageUrl] = useState()
 const [pages, setPages] = useState()
