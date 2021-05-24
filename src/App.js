@@ -10,6 +10,20 @@ const [nextPageUrl, setNextPageUrl] = useState()
 const [prevPageUrl, setPrevPageUrl] = useState()
 const [pages, setPages] = useState()
 
+useEffect(() => {
+  const url = currentPageUrl
+  setLoading(true)
+  const fetchData = async () => {
+    const res = await fetch(url);
+    const data = await res.json();
+    setCharacters(data.results)
+    setLoading(false);
+    setNextPageUrl(data.info.next);
+    setPrevPageUrl(data.info.prev);
+    setPages(data.info.pages)
+  }
+  fetchData();
+},[currentPageUrl])
 
   return (
     <div className="App">
